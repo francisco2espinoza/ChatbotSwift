@@ -1,5 +1,6 @@
 import os
 from dotenv import load_dotenv
+from openai import OpenAI
 
 load_dotenv()
 
@@ -12,3 +13,5 @@ response = client.chat.completions.create(
         {"role": "user", "content": "What is the capital of France?"}
     ]
 )
+
+print(response.choices[0].message.content)
